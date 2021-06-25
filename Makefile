@@ -6,7 +6,7 @@ VERSION = 2021.1
 all: build
 
 build:
-	docker build -t $(NAME):$(VERSION) --rm .
+	docker build -t $(NAME):$(VERSION) --rm . >> build.log 2>&1
 
 tag_latest:
 	docker tag $(NAME):$(VERSION) $(NAME):latest
