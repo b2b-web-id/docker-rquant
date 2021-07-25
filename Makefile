@@ -1,12 +1,12 @@
 NAME = b2bwebid/r-quant
-VERSION = 2021.1
+VERSION = 2021.2
 
 .PHONY: all build tag_latest release
 
 all: build
 
 build:
-	docker build -t $(NAME):$(VERSION) --rm . >> build.log 2>&1
+	docker build -t $(NAME):$(VERSION) --rm .
 
 tag_latest:
 	docker tag $(NAME):$(VERSION) $(NAME):latest

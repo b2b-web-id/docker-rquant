@@ -1,3 +1,5 @@
 paket <- c('quantmod','fPortfolio','PortfolioAnalytics',
            'fArma','forecast','PairTrading','timeSeries','xts')
-install.packages(paket, ask=F)
+for(i in paket) {
+  install.packages(i, ask=F, repo="https://cran.rstudio.com/")
+}
