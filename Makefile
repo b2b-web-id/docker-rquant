@@ -1,5 +1,5 @@
 NAME = b2bwebid/r-quant
-VERSION = 2021.3
+VERSION = 2021.4
 
 .PHONY: all build tag_latest release
 
