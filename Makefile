@@ -1,11 +1,12 @@
 NAME = b2bwebid/r-quant
-VERSION = 2021.4
+VERSION = 2022.1
 
 .PHONY: all build tag_latest release
 
 all: build
 
 build:
+	docker pull b2bwebid/r-base:bullseye
 	docker build -t $(NAME):$(VERSION) --rm .
 
 tag_latest:
