@@ -1,5 +1,5 @@
 NAME = b2bwebid/r-quant
-VERSION = 2023.1
+VERSION = 2023.2
 BUILD = $(shell date +'%Y%m%d')
 
 .PHONY: all build tag_latest release
@@ -7,7 +7,7 @@ BUILD = $(shell date +'%Y%m%d')
 all: build tag_version
 
 build:
-	docker pull b2bwebid/r-base:bullseye
+	docker pull b2bwebid/r-base:bookworm
 	docker build -t $(NAME):$(BUILD) --rm .
 
 tag_version:
@@ -15,9 +15,9 @@ tag_version:
 
 tag_latest:
 	docker tag $(NAME):$(VERSION) $(NAME):latest
+	docker push $(NAME):latest
 
 release: tag_latest
 	@if ! docker images $(NAME) | awk '{ print $$2 }' | grep -q -F $(VERSION); then echo "Build image first."; false; fi
 	docker push $(NAME):$(BUILD)
 	docker push $(NAME):$(VERSION)
-	docker push $(NAME):latest
