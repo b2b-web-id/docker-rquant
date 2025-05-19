@@ -1,5 +1,5 @@
 NAME = b2bwebid/r-quant
-VERSION = 2023.2
+VERSION = 2025.1
 BUILD = $(shell date +'%Y%m%d')
 
 .PHONY: all build tag_latest release
