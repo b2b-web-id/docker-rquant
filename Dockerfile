@@ -1,4 +1,4 @@
-FROM b2bwebid/r-base:bookworm
+FROM b2bwebid/r-base:trixie
 RUN apt install -y libcurl4-openssl-dev libgsl-dev libxml2-dev libglpk-dev \
                    file libssl-dev libfontconfig1-dev && \
  apt clean

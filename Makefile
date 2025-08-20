@@ -1,5 +1,5 @@
 NAME = b2bwebid/r-quant
-VERSION = 2025.1
+VERSION = 2025.2
 BUILD = $(shell date +'%Y%m%d')
 
 .PHONY: all build tag_latest release
@@ -7,7 +7,7 @@ BUILD = $(shell date +'%Y%m%d')
 all: build tag_version
 
 build:
-	docker pull b2bwebid/r-base:bookworm
+	docker pull b2bwebid/r-base:trixie
 	docker build -t $(NAME):$(BUILD) --rm .
 
 tag_version:
